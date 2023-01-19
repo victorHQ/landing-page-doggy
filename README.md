@@ -1,274 +1,81 @@
-# Creating a boilerplate for React 18 in ViteJS
+<h1 align="center">
+  <img alt="ViteJS Icon" title="ViteJS" src="https://user-images.githubusercontent.com/34111368/213328997-754253eb-b9ce-48e5-a4de-003c1b07c588.png" width="220px" />
+</h1>
+<p align="center">Doggy - Landing-Page</p>
 
-## Editorconfig
+<p align="center">
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#project">Projeto</a> •
+ <a href="#install">Instalação</a> •
+ <a href="#license">Licença</a>
+</p>
 
-If your are using editorconfig, this is my config:
+<p align="center">
+  <img alt="Page" src="https://user-images.githubusercontent.com/34111368/213333081-19d680b6-f890-4542-9ef5-e787405762e8.png">
+</p>
 
-```
-# EditorConfig is awesome: https://EditorConfig.org
+<h2 id="tecnologias" align="center">
+  Tecnologias :computer:
+</h2>
 
-# top-most EditorConfig file
-root = true
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styled-components&logoColor=ffffff"/>
+  <img src="https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=Storybook&logoColor=ffffff"/>
+  <img src="https://img.shields.io/badge/jest-C21325?style=for-the-badge&logo=jest&logoColor=ffffff"/>
+  <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=ffffff"/>
+  <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=ffffff"/>
+</p>
 
-[*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-```
+<h2 id="project" align="center">
+  Projeto :technologist:
+</h2>
+<p align="center">
+  O projeto foi feito com o intuito de reforçar os meus estudos e testar as minhas capacidades. Utilizei o React, Jest e StoryBook para criar e testar os components que eram exportados pela API do Strapi, bem como, o eslint, prettier para formatação e estruturação do código.
+</p>
 
-## For ESLint and Prettier
+<h2 id="install" align="center">
+  Instalação :rocket:
+</h2>
+<p align="center">
+  Nota: O projeto necessita do <a href="https://github.com/victorHQ/strapi-landing-pages">backend em strapi</a>. Configuração para o fetch da página <a href="https://github.com/victorHQ/landing-page-doggy/blob/main/src/config/index.js">config</a>
 
-```
-npm i eslint @babel/eslint-parser @babel/preset-env @babel/preset-react prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-storybook -D
-```
+  <table border="1" align="center">
+    <tr align="center">
+      <td><strong>Chaves</strong></td>
+      <td><strong>Valor</strong></td>
+    </tr>
+    <tr align="center">
+        <td>url</td>
+        <td title="Ip do Servidor">http://ipdoservidor:1337/api/pages/?filters[slug]=</td>
+    </tr>
+    <tr align="center">
+        <td>siteName</td>
+        <td title="Nome do document">Nome do site</td>
+    </tr>
+    <tr align="center">
+        <td>defaultSlug</td>
+        <td title="Slug exportado pelo strapi">Slug exportado pelo strapi</td>
+    </tr>
+  </table>
 
-Create the files `.eslintrc.js`, `.prettierrc.js` and a file called
-`babel.config.js`.
+  <h3 align="left">Passo a Passo</h3>
+  <ol>
+    <li>Instale o Node com o NPM pelo link: https://nodejs.org/en/download/</li>
+    <li>Depois baixe os arquivos do projeto e excute o terminal dentro da pasta onde contém os arquivos.</li>
+    <li>Agora execute os comandos no terminal:</li>
+    <ul>
+      <li title="Instala as dependencias">npm install</li>
+      <li title="Inicia a frontend">npm run dev</li>
+    </ul>
+  </ol>
+</p>
 
-.eslintrc.js
+<h2 id="license" align="center">
+  Licença 📝
+</h2>
+<p align="center">
+  Esse projeto está sob a licença MIT. Veja o arquivo <a href="LICENSE"> LICENSE </a> para mais detalhes.<br><br>
+  <a href="LICENSE" target="_blank"><img src="https://img.shields.io/static/v1?label=license&message=mit&color=green&style=for-the-badge&logo="/></a>
+</p>
 
-```javascript
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    jest: true,
-    node: true,
-  },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
-    'plugin:storybook/recommended',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: ['react', 'prettier', 'react-hooks'],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-  rules: {
-    'react/react-in-jsx-scope': 'off',
-  },
-};
-```
-
-.prettierrc.js
-
-```javascript
-module.exports = {
-  arrowParens: 'always',
-  bracketSpacing: true,
-  endOfLine: 'lf',
-  htmlWhitespaceSensitivity: 'ignore',
-  insertPragma: false,
-  jsxSingleQuote: false,
-  printWidth: 80,
-  proseWrap: 'always',
-  quoteProps: 'as-needed',
-  requirePragma: false,
-  semi: true,
-  singleQuote: true,
-  tabWidth: 2,
-  trailingComma: 'all',
-  useTabs: false,
-  vueIndentScriptAndStyle: false,
-  embeddedLanguageFormatting: 'off',
-};
-```
-
-babel.config.js
-
-```javascript
-module.exports = {
-  presets: [
-    '@babel/preset-env',
-    ['@babel/preset-react', { runtime: 'automatic' }],
-  ],
-};
-```
-
-## Prop-types?
-
-If your are using proptypes, install it:
-
-```
-npm i prop-types
-```
-
-And use:
-
-## Testing
-
-For tests, we're going to use `vitest` and `testing-library`.
-
-### For vitest
-
-```
-npm i -D vitest jsdom @testing-library/react @testing-library/jest-dom
-```
-
-Now, in your vite.config.js:
-
-```javascript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  root: 'src',
-  build: {
-    outDir: '../dist',
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: ['../.test/setup.js'],
-    include: ['**/*(*.)?{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    exclude: ['node_modules', 'dist', '.idea', '.git', '.cache'],
-  },
-});
-```
-
-For the file in `/.test/setup.js`, use:
-
-```javascript
-import '@testing-library/jest-dom';
-import 'jest-styled-components';
-```
-
-Ps.: I added `jest-styled-components` to make it easy for me. I am going to use
-Styled-Components. If your aren't, please comment that line out.
-
-### For Styled Components
-
-```
-npm i styled-components
-npm i -D jest-styled-components @types/styled-components
-```
-
-Create a folder called styles in `src`. Add the files `render-theme.jsx`,
-`global-styles.jsx`, `theme.js` and a `styled-theme-provider.jsx`.
-
-The file `theme.js` is where you should add the theme for your application, for
-example (the most simple and ugly theme you would ever see):
-
-```javascript
-export const theme = {
-  colors: {
-    primary: 'red',
-    secondary: 'blue',
-  },
-};
-```
-
-The `global-styles.jsx` is where we add the global theme for our application.
-Here we can add fonts, provide css reset and more.
-
-```javascript
-import { createGlobalStyle } from 'styled-components';
-
-export const GlobalStyles = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    font-size: 62.5%;
-  }
-
-  body {
-    font-size: 1.6rem;
-  }
-`;
-```
-
-The `styled-theme-provider.jsx` makes things easier by providing the theme to
-other components.
-
-```javascript
-import { ThemeProvider } from 'styled-components';
-import Proptypes from 'prop-types';
-import { GlobalStyles } from './global-styles';
-import { theme } from './theme';
-
-export const StyledThemeProvider = ({ children }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {children}
-    </ThemeProvider>
-  );
-};
-
-StyledThemeProvider.propTypes = {
-  children: Proptypes.node.isRequired,
-};
-```
-
-The file `render-theme.jsx` is going to be used for tests. It will provide the
-`StyledThemeProvider` so we can use styled-components in our tests.
-
-This is the most basic version of the `renderTheme` function.
-
-```javascript
-import { render } from '@testing-library/react';
-import { StyledThemeProvider } from './styled-theme-provider';
-
-export const renderTheme = (children) => {
-  return render(<StyledThemeProvider>{children}</StyledThemeProvider>);
-};
-```
-
-And on the `main.jsx`, you may want to wrap everything using
-`StyledThemeProvider`.
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { StyledThemeProvider } from './styles/styled-theme-provider';
-import App from './App';
-import './index.css';
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <StyledThemeProvider>
-      <App />
-    </StyledThemeProvider>
-  </React.StrictMode>,
-);
-```
-
-# Show markdown as HTML
-
-```
-npm install react-markdown
-```
-
-```jsx
-import ReactMarkdown from 'react-markdown';
-import { TextComponent } from '../TextComponent';
-
-<TextComponent>
-  <ReactMarkdown>{html}</ReactMarkdown>,
-</TextComponent>
-```
